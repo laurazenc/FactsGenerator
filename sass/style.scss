@@ -1,10 +1,79 @@
 // Imports 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin');
 
 
 // Global variables
 $background: #ddd;
+$grey: #666;
+$grey-light: #333;
 
+// Global styles
+* {border:0;outline:0;box-model: border-box;}
+
+p{
+	color: $grey;
+	font-size: 20px;
+}
 body{
+	color: $grey-light;
+	font: 20px/1.5;
   background-color: $background;
+  font-family: 'Roboto Condensed';
+}
+
+// Panels
+
+.panel{
+	position: relative;
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	
+}
+
+// Top-Panel
+.input-file-container {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  height: auto;
+  width:350px;
+}
+
+.addInputFile, #addInputFileForm{
+	position: relative;
+	display: block;
+}
+
+#inputBox{
+	position: relative;
+	width: 100%;
+	display: block;
+	height: 150px;
+	margin-bottom: 15px;
+}
+
+#inputBox:after{
+	position:absolute;
+  width:350px;
+  content:"Upload your file";
+  left:0;
+  right:0;
+  padding: 50px 0;
+  text-align:center;
+  border-radius:10px;
+  border:5px dashed #ccc;
+  color:#ccc;
+  font-size:30px; 
+}
+
+#inputBox:hover:after {
+  background:#ccc;
+  color:#fff;
+  cursor:pointer;
+}
+
+#inputBox input#inputFile {
+    width: 0px;
+    height: 0px;
 }
