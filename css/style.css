@@ -9,7 +9,7 @@ p {
   font-size: 20px; }
 
 body {
-  color: #333;
+  color: #b7c0c7;
   font: 20px/1.5;
   background-color: #ddd;
   font-family: 'Roboto Condensed'; }
@@ -59,5 +59,75 @@ body {
 #inputBox input#inputFile {
   width: 0px;
   height: 0px; }
+
+article {
+  margin: 0 auto;
+  position: relative;
+  display: block; }
+
+p.rootTitle {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 700; }
+
+.pane {
+  display: block;
+  overflow: hidden;
+  transition: all .4s ease;
+  border-bottom: 1px solid #b7c0c7; }
+  .pane .inner {
+    margin: 0 auto; }
+    .pane .inner h1 {
+      margin: 10px;
+      font-weight: 600;
+      position: relative;
+      display: block;
+      height: 35px; }
+      .pane .inner h1 span {
+        position: absolute; }
+      .pane .inner h1 .subchildrenCounter {
+        right: 0; }
+    .pane .inner .subchildrenWrapper {
+      clear: both;
+      display: block; }
+      .pane .inner .subchildrenWrapper .subchildren {
+        background-color: white;
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+        min-height: 50px;
+        display: block;
+        vertical-align: middle; }
+  .pane.active {
+    max-height: 100%; }
+  .pane:not(.active) {
+    transition: all .4s ease;
+    max-height: 50px; }
+
+.active {
+  transition: all .4s ease;
+  overflow: visible !important; }
+
+.generalContent {
+  border: 1px solid #b7c0c7;
+  border-radius: 5px; }
+  .generalContent:last-child {
+    border-bottom: none; }
+
+.bg-color1 {
+  color: #DC3023; }
+.bg-color2 {
+  color: #C93756; }
+.bg-color3 {
+  color: #875F9A; }
+.bg-color4 {
+  color: #22A7F0; }
+.bg-color5 {
+  color: #1F4788; }
+.bg-color6 {
+  color: #26A65B; }
+.bg-color7 {
+  color: #8DB255; }
+.bg-color8 {
+  color: #F3C13A; }
 
 /*# sourceMappingURL=style.css.map */
