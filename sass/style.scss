@@ -18,10 +18,14 @@ $youngGreenOnion:   #8DB255;
 $eucalyptus:        #26A65B;
 $amurCorkTree:      #F3C13A;
 $silver:            #BFBFBF;
+$asbestos:          #7f8c8d;
+$midnightBlue:      #2c3e50;
 $ruby:              #e15258;
 $bussiness:         #f9845b;
 $WordPress:         #838cc7;
 $iOS:               #53bbb4;
+$android:           #51b46d;
+$edit:              #fff2a8;
 
 $palette: (
   '1': $redOrange,
@@ -43,7 +47,7 @@ p{
 }
 body{
 	color: $grey-light;
-	font: 20px/1.5;
+	font-size: 20px;
   background-color: $background;
   font-family: 'Roboto Condensed';
 }
@@ -52,7 +56,7 @@ body{
 
 .panel{
 	position: relative;
-	width: 80%;
+	width: 850px;
 	height: auto;
 	margin: 0 auto;
 	
@@ -149,13 +153,77 @@ p.rootTitle{
       clear: both;
       display: block;
 
+
       .subchildren{
         background-color: white;
-        padding: 5px;
+        clear: both;
         border-bottom: 1px solid #ddd;
         min-height: 50px;
-        display: block;
-        vertical-align: middle;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+
+        .subchildrenText{
+          
+          width: 775px;
+          padding: 5px;
+          margin: 7px;
+          font-size: 20px;
+          color:  $midnightBlue;
+          vertical-align: middle;
+          min-height: 20px;
+          height: auto;
+          background-color: white;
+
+        }
+
+        .subchildrenPanel{
+          width: 50px;
+          right: 0;
+          margin-top: 20px;
+          vertical-align: middle;
+          min-height: 1px;
+          height: auto;
+          position: absolute;
+          top: 0;
+
+          > i{
+            font-size: 20px;
+            margin-right: 5px;
+            color: $grey-light;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+
+          .fa{
+              display: inline-block;
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              transform: translate(0, 0);
+          }
+          .edit{
+            &:hover{
+              color: $WordPress;
+            }
+          }
+
+          .delete{
+            &:hover{
+              color: $ruby; 
+            }
+          }
+
+          .save{
+            &:hover{
+              color: $android;
+            }
+          }
+        }
       }
     }
   } 
@@ -180,6 +248,14 @@ p.rootTitle{
   overflow: visible !important;
 }
 
+.editable{
+  background-color: $edit !important;
+}
+
+.dashed{
+  border: 1px dashed $silver;
+}
+
 .generalContent{
   border: 1px solid $grey-light;
   border-radius: 5px;
@@ -188,6 +264,159 @@ p.rootTitle{
     border-bottom: none;
   }
 }
+
+// Adding panel
+.adding-panel{
+  visibility: hidden;
+  position:fixed;
+  background-color:rgba(0,0,0,0.5); 
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  
+
+  .adding-wrapper{
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#fff;
+    top:50%;
+    border-radius:5px;
+    
+    left: 0;
+    text-align:center;
+    box-shadow:0 0 10px 0 #000;
+  }
+}
+.close-btn{
+  background-color: black !important;
+}
+.adding-btn{
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  width: 50px;
+  z-index: 999;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $pictonBlue;
+
+  .add, .close{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+
+    &:before{
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+//Export panel
+.export-panel{
+  visibility: hidden;
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.export-panel input{
+  background: $eucalyptus;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+  text-align: center;
+}
+
+// Add form
+.addchooser, .addForms{
+  
+  display: block;
+}
+
+.addchooser input{
+  line-height: 50px;
+  border-radius: 5px;
+  background-color: #F44336;
+  color: #fff;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.addForms{
+  position: relative;
+}
+.addingForm-lv1, .addingForm-lv2{
+  visibility: hidden;
+  margin-top: 20px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 250px;
+}
+
+
+#level1Name{
+  width: 150px;
+  background: $background;
+  
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px dashed #888;
+  color: #666;
+  font-size: 25px;
+  margin: 10px 0;
+  line-height: 45px;
+}
+
+#level2Obj{
+  border-radius: 5px;
+  display: block;
+  background: $background;
+  border: 1px solid #888;
+  margin: 0 auto;
+  width: 395px;
+  height: 100px;
+}
+.addBtn{
+  margin-top: 20px;
+}
+.addBtn input{
+  background: $eucalyptus;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#lv1{
+  display: block;
+  margin: 0 auto 10px;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  background: rgb(41, 128, 185);
+  border-radius: 3px;
+  text-indent: 0.01px;
+  
+}
+
+
 
 // Setting Tags bg-colors
 

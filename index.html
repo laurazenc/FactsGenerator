@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Fact Generator</title>
+	<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
@@ -21,8 +22,47 @@
 			</div>
 		</div>
 		<hr>
-		<div class="adding-panel panel"></div>
 		<div class="content-panel panel"></div>
+		<div class="export-panel panel">
+			<input id="exportBtn" type="button" class="btn" value="Export to XML" />
+		</div>
+		<div class="adding-panel">
+			<div class="adding-wrapper">
+				<p class="addedType">Adding new:</p>
+				<div class="addchooser">
+					<input type="button" class="btnlevel1" value=""/>
+					<input type="button" class="btnlevel2" value=""/>
+				</div>
+
+				<div class="addForms">
+					<div class="addingForm-lv1">
+						<form id="level1Form">	
+								<p></p>
+								<label>Enter new name: </label>
+								<input type="text" name="level1Name" id="level1Name"/>
+								<div class="addBtn" name="level2">
+									<input type="button" class="btnAddlv1" value="Add"/>
+								</div>
+						</form>	
+					</div>
+					<div class="addingForm-lv2">
+						<form id="level2Form">
+								<p></p>
+								<select id="lv1">							    
+							  </select>
+								<label>Enter new content: </label>
+								<textarea type="text" name="level2Obj" id="level2Obj"></textarea>
+								<div class="addBtn" name="level2">
+									<input type="button" class="btnAddlv2" value="Add"/>
+								</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="adding-btn">
+			<i class="add fa fa-plus"></i>
+		</div>
 	</div>
 </body>
 </html>
